@@ -11,7 +11,7 @@ app.use(express.json())
 
 // mongo here...
 const mongoose = require('mongoose')
-const mongoDB = 'mongodb+srv://Dina:Tobias1987!@todo.m74mi.mongodb.net/test'
+const mongoDB = 'mongodb+srv://Dina:Tobias1987!@todo.m74mi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true})
 
 const db = mongoose.connection
