@@ -1,8 +1,10 @@
 const express = require('express') 
 const cors = require('cors')
 const app = express()
-const port = 3000;
-
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
+});
 // cors - allow connection from different domains and ports
 app.use(cors())
 
@@ -33,10 +35,6 @@ const todoSchema = new mongoose.Schema({
 
 // todos-route
 
-// app listen port 3000
-app.listen(port, () => {
-  console.log('Example app listening on port 3000')
-})
 
 app.post('/todos', async (request, response) => {
     const { text } = request.body
